@@ -5,7 +5,7 @@
  * @LastEditTime: 2019-08-15 15:36:44
  */
 
- namespace MaxZhang\DataokeSdk\Request;
+ namespace MaxZhang\DataokeSdk\Request\Feature;
 
  use MaxZhang\DataokeSdk\DataokeRequest;
 
@@ -26,4 +26,9 @@
     {
         return array("version"=>$this->version,"id"=>$this->id,'size'=>$this->size) ;
     }
+
+     function check()
+     {
+         // TODO: Implement check() method.
+     }
  }

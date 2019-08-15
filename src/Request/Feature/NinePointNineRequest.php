@@ -4,7 +4,7 @@
  * @Date: 2019-08-15 14:24:46
  * @LastEditTime: 2019-08-15 14:52:37
  */
-namespace MaxZhang\DataokeSdk\Request;
+namespace MaxZhang\DataokeSdk\Request\Feature;
 
 use MaxZhang\DataokeSdk\DataokeRequest;
 
@@ -36,6 +36,11 @@ use MaxZhang\DataokeSdk\DataokeRequest;
      public function generParams()
      {
          return array('version' =>$this->version ,'pageId'=>$this->pageId ,'nineCid'=>$this->nineCid);
+     }
+
+     function check()
+     {
+         // TODO: Implement check() method.
      }
  }
 

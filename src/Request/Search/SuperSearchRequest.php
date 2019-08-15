@@ -4,7 +4,7 @@
  * @Date: 2019-08-15 16:51:13
  * @LastEditTime: 2019-08-15 17:37:12
  */
-namespace MaxZhang\DataokeSdk\Request;
+namespace MaxZhang\DataokeSdk\Request\Search;
 
 use MaxZhang\DataokeSdk\DataokeRequest;
 /**
@@ -49,5 +49,10 @@ class SuperSearchRequest extends DataokeRequest{
             "sort"=>$this->sort,
             "type"=>$this->type
         );
+    }
+
+    function check()
+    {
+        // TODO: Implement check() method.
     }
 }
