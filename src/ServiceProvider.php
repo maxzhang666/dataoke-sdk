@@ -1,9 +1,8 @@
 <?php
-/**
- * User:  MaxZhang
- * Email: q37388438@gmail.com
- * Date: 2019/06/10
- * Time: 18:35
+/*
+ * @Author: MaxZhang
+ * @Date: 2019-08-15 11:30:45
+ * @LastEditTime: 2019-08-15 11:30:45
  */
 
 namespace MaxZhang\DataokeSdk;

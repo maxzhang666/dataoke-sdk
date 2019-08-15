@@ -12,9 +12,7 @@ $ composer require maxzhang/dataoke-sdk
 ```
 ## 说明:
 ### 目前完成：
-- 政企业务(govbus)
-- 联盟商品(union)
-- 优惠券(netalliance)
+还没有
 
 
 [官方文档](http://www.dataoke.com/pmc/api-market.html)
