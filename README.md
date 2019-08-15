@@ -1,4 +1,4 @@
-<h1 align="center"> suning-sdk</h1>
+<h1 align="center"> Dataoke-sdk</h1>
 
 <p align="center"> 基于大淘客开放平台Api封装的 Composer Package 组件包.</p>
 
@@ -8,7 +8,7 @@
 ## 安装：
 
 ```
-$ composer require maxzhang/suning-sdk
+$ composer require maxzhang/dataoke-sdk
 ```
 ## 说明:
 ### 目前完成：
@@ -17,13 +17,10 @@ $ composer require maxzhang/suning-sdk
 - 优惠券(netalliance)
 
 
-[官方文档](http://openpre.cnsuning.com/ospos/apipage/toApiListMenu.do)
+[官方文档](http://www.dataoke.com/pmc/api-market.html)
 
->其他官方功能API 添加封装方法 参考 
-`/src/Request/govbus/`
-下的实现
 
-## 使用方法:
+## 使用方法(参考suning-sdk):
 ```php
 use MaxZhang\SuningSdk\Request\Govbus\CategoryGetRequest;
 use MaxZhang\SuningSdk\DefaultSuningClient;

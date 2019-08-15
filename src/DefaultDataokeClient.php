@@ -2,7 +2,7 @@
 /*
  * @Author: MaxZhang
  * @Date: 2019-08-15 10:11:40
- * @LastEditTime: 2019-08-15 10:19:51
+ * @LastEditTime: 2019-08-15 10:30:24
  */
 declare(strict_types=1);
 namespace MaxZhang\DataokeSdk;
@@ -20,7 +20,7 @@ class DefaultDataokeClient{
      * @param string $appSecret appKey对应密钥
      * @param string $format 请求、响应格式(xml、json)
      */
-    public function __construct(string $serverUrl = null, string $appKey = null, string $appSecret = null)
+    public function __construct(string $serverUrl = "https://openapi.dataoke.com/", string $appKey = null, string $appSecret = null)
     {        
         $this->serverUrl = $serverUrl;
         $this->appKey = $appKey;
