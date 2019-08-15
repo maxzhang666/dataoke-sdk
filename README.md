@@ -22,19 +22,18 @@ $ composer require maxzhang/dataoke-sdk
 
 ## 使用方法(参考suning-sdk):
 ```php
-use MaxZhang\SuningSdk\Request\Govbus\CategoryGetRequest;
-use MaxZhang\SuningSdk\DefaultSuningClient;
+use MaxZhang\DataokeSdk\Request\Govbus\CategoryGetRequest;
+use MaxZhang\DataokeSdk\DefaultDataokeClient;
 ```
 ```php
 $req = new CategoryGetRequest();
 $req->setCheckParam('true');
 $assertArray = [
-    'serverUrl' => 'http://openpre.cnsuning.com/api/http/sopRequest',
+    'serverUrl' => 'https://openapi.dataoke.com/',
     'appKey' => 'b49970b52c88dee1d7c1743da32cedd2',
-    'appSecret' => '2ae2da81c64ae149c2aeb99a535508b0',
-    'format' => 'json'
+    'appSecret' => '2ae2da81c64ae149c2aeb99a535508b0'
 ];
-$client = new DefaultSuningClient($assertArray['serverUrl'], $assertArray['appKey'],
+$client = new DefaultDataokeClient($assertArray['serverUrl'], $assertArray['appKey'],
     $assertArray['appSecret'], $assertArray['format']);
 
 $resp = $client->execute($req);
@@ -49,11 +48,11 @@ print_r("\n返回响应报文:\n" . $resp);
 >laravel 5.5以下安排完毕后需要自行配置ServiceProvider：
 
 `config/app.php`文件`providers`中添加
-`MaxZhang\SuningSdk\ServiceProvider::class`
+`MaxZhang\DataokeSdk\ServiceProvider::class`
 ```php
  'providers' => [
         ...
-        MaxZhang\SuningSdk\ServiceProvider::class
+        MaxZhang\DataokeSdk\ServiceProvider::class
     ],
 ```
 >laravel >=5.5 自动注册
@@ -62,20 +61,18 @@ print_r("\n返回响应报文:\n" . $resp);
 <p>1.安装完毕后，config/services.php添加appkey等相关配置</p>
 
 ```php
-'suningSdk' => [
-    'appKey' => env('SUNING_SDK_APPKEY'),
-    'appSecret' => env('SUNING_SDK_APPSECRET'),
-    'serverUrl' => env('SUNING_SDK_SERVERURL'),
-    'format' => env('SUNING_SDK_FORMAT'),
+'dataokeSdk' => [
+    'appKey' => env('DATAOKE_SDK_APPKEY'),
+    'appSecret' => env('DATAOKE_SDK_APPSECRET'),
+    'serverUrl' => env('DATAOKE_SDK_SERVERURL')    
 ],
 ```
 <p>2. .env文件中新增配置项</p>
 
 ```php
-SUNING_SDK_APPKEY= 你的appkey
-SUNING_SDK_APPSECRET= 你的appSecret
-SUNING_SDK_SERVERURL=http://openpre.cnsuning.com/api/http/sopRequest
-SUNING_SDK_FORMAT=json
+DATAOKE_SDK_APPKEY= 你的appkey
+DATAOKE_SDK_APPSECRET= 你的appSecret
+DATAOKE_SDK_SERVERURL=https://openapi.dataoke.com/
 ```
 <p>3. 配置完毕，新建控制器 开始写业务代码</p>
 
@@ -85,8 +82,8 @@ SUNING_SDK_FORMAT=json
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use MaxZhang\SuningSdk\Request\Govbus\CategoryGetRequest;
-use MaxZhang\SuningSdk\DefaultSuningClient;
+use MaxZhang\DataokeSdk\Request\Govbus\CategoryGetRequest;
+use MaxZhang\DataokeSdk\DefaultDataokeClient;
 
 class CategoryGet extends Controller
 {
@@ -96,7 +93,7 @@ class CategoryGet extends Controller
         $req = new CategoryGetRequest();
 
         $req->setCheckParam('true');
-        $resp =app('suningSdk')->execute($req);
+        $resp =app('dataokeSdk')->execute($req);
         $reqJson = $req->getReqJson();
         print_r("请求报文:\n" . $reqJson);
         print_r("\n返回响应报文:\n" . $resp);
@@ -104,14 +101,14 @@ class CategoryGet extends Controller
     }
 }
 ```
->如上，可以用两种方式来获取 MaxZhang\SunningSdk\DefaultSuningClient 实例：
+>如上，可以用两种方式来获取 MaxZhang\DataokeSdk\DefaultDataokeClient 实例：
 
 ###方法注入
 ```php
-    public function show(DefaultSuningClient $defaultSuningClient) 
+    public function show(DefaultDataokeClient $defaultDataokeClient) 
     {
         ...
-        $response = $defaultSuningClient->execute('$req');
+        $response = $defaultDataokeClient->execute('$req');
     }
 ```
 ###服务名访问
@@ -122,12 +119,6 @@ class CategoryGet extends Controller
         $response =app('suningSdk')->execute($req);
     }
 ```
-
-
-
-### 相关链接
-[苏宁开放平台-SDK下载介绍](http://openpre.cnsuning.com/ospos/apipage/toDocContent.do?menuId=28) 
-
 ## License
 
 Apache Licence 2.0
