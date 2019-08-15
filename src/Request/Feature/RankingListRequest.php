@@ -9,8 +9,9 @@
 namespace MaxZhang\DataokeSdk\Request\Feature;
 
 
-use http\Exception\InvalidArgumentException;
+
 use MaxZhang\DataokeSdk\DataokeRequest;
+use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
 
 class RankingListRequest extends DataokeRequest
 {
@@ -33,7 +34,7 @@ class RankingListRequest extends DataokeRequest
     function check()
     {
         if (empty($this->rankType)) {
-            throw new InvalidArgumentException("rankType must required!");
+            throw new InvalidArgumentException("rankType must be required!");
         }
     }
 }
