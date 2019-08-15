@@ -2,7 +2,7 @@
 /*
  * @Author: MaxZhang
  * @Date: 2019-08-15 10:11:40
- * @LastEditTime: 2019-08-15 11:07:31
+ * @LastEditTime: 2019-08-15 11:15:12
  */
 declare(strict_types=1);
 namespace MaxZhang\DataokeSdk;
@@ -49,7 +49,7 @@ class DefaultDataokeClient{
         
         $paramsArray=$this->signSendData($paramsArray);
         try{
-            $resp=self::curl($this->serverUrl.'/'.$request->getApiMethodName(),$paramsArray);
+            $resp=self::curl($this->serverUrl.'/'.$request->getApiMethodName().'?'.http_build_query($paramsArray));
         }catch(\Exception $e)
         {
             throw  new HttpException($e->getMessage(),$e->getCode());
@@ -77,8 +77,8 @@ class DefaultDataokeClient{
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
         curl_setopt($ch, CURLOPT_TIMEOUT, self::$readTimeout);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::$connectTimeout);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+        // curl_setopt($ch, CURLOPT_POST, true);
+        // curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
 
         // https 请求
         if (strlen($url) > 5 && strtolower(substr($url, 0, 5)) == 'https') {
