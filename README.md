@@ -29,7 +29,7 @@ use MaxZhang\DataokeSdk\DefaultDataokeClient;
 $req = new CategoryGetRequest();
 $req->setCheckParam('true');
 $assertArray = [
-    'serverUrl' => 'https://openapi.dataoke.com/',
+    'serverUrl' => 'https://openapi.dataoke.com',
     'appKey' => 'b49970b52c88dee1d7c1743da32cedd2',
     'appSecret' => '2ae2da81c64ae149c2aeb99a535508b0'
 ];
@@ -72,7 +72,7 @@ print_r("\n返回响应报文:\n" . $resp);
 ```php
 DATAOKE_SDK_APPKEY= 你的appkey
 DATAOKE_SDK_APPSECRET= 你的appSecret
-DATAOKE_SDK_SERVERURL=https://openapi.dataoke.com/
+DATAOKE_SDK_SERVERURL=https://openapi.dataoke.com
 ```
 <p>3. 配置完毕，新建控制器 开始写业务代码</p>
 
