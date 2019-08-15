@@ -2,7 +2,7 @@
 /*
  * @Author: MaxZhang
  * @Date: 2019-08-15 10:11:40
- * @LastEditTime: 2019-08-15 11:15:12
+ * @LastEditTime: 2019-08-15 15:22:07
  */
 declare(strict_types=1);
 namespace MaxZhang\DataokeSdk;
@@ -42,6 +42,7 @@ class DefaultDataokeClient{
         if(empty($this->appSecret)){
             throw new InvalidArgumentException("appSecret can not empty ！");
         }
+        $request->check();
         $paramsArray=$request->getApiParams();
         if (empty($paramsArray)) {
             $paramsArray="";
@@ -50,6 +51,7 @@ class DefaultDataokeClient{
         $paramsArray=$this->signSendData($paramsArray);
         try{
             $resp=self::curl($this->serverUrl.'/'.$request->getApiMethodName().'?'.http_build_query($paramsArray));
+            return $resp;
         }catch(\Exception $e)
         {
             throw  new HttpException($e->getMessage(),$e->getCode());
@@ -93,7 +95,7 @@ class DefaultDataokeClient{
         } else {
             $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             if (200 !== $httpStatusCode) {
-                throw new HttpException('Suning API Network Error！httpStatusCode' . $response, $httpStatusCode);
+                throw new HttpException('Dataoke API Network Error！httpStatusCode' . $response, $httpStatusCode);
             }
         }
         curl_close($ch);
