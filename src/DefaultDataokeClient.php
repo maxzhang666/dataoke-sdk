@@ -2,7 +2,7 @@
 /*
  * @Author: MaxZhang
  * @Date: 2019-08-15 10:11:40
- * @LastEditTime: 2019-08-15 14:49:37
+ * @LastEditTime: 2019-08-15 15:22:07
  */
 declare(strict_types=1);
 namespace MaxZhang\DataokeSdk;
@@ -95,7 +95,7 @@ class DefaultDataokeClient{
         } else {
             $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             if (200 !== $httpStatusCode) {
-                throw new HttpException('Suning API Network Error！httpStatusCode' . $response, $httpStatusCode);
+                throw new HttpException('Dataoke API Network Error！httpStatusCode' . $response, $httpStatusCode);
             }
         }
         curl_close($ch);
