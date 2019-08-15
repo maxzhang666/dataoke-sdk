@@ -25,14 +25,13 @@ use MaxZhang\DataokeSdk\DefaultDataokeClient;
 ```
 ```php
 $req = new CategoryGetRequest();
-$req->setCheckParam('true');
 $assertArray = [
     'serverUrl' => 'https://openapi.dataoke.com',
     'appKey' => 'b49970b52c88dee1d7c1743da32cedd2',
     'appSecret' => '2ae2da81c64ae149c2aeb99a535508b0'
 ];
 $client = new DefaultDataokeClient($assertArray['serverUrl'], $assertArray['appKey'],
-    $assertArray['appSecret'], $assertArray['format']);
+    $assertArray['appSecret']);
 
 $resp = $client->execute($req);
 $reqJson = $req->getReqJson();
@@ -90,7 +89,7 @@ class CategoryGet extends Controller
 
         $req = new CategoryGetRequest();
 
-        $req->setCheckParam('true');
+        
         $resp =app('dataokeSdk')->execute($req);
         $reqJson = $req->getReqJson();
         print_r("请求报文:\n" . $reqJson);
@@ -114,10 +113,9 @@ class CategoryGet extends Controller
     public function show() 
     {
         ...
-        $response =app('suningSdk')->execute($req);
+        $response =app('dataokeSdk')->execute($req);
     }
 ```
 ## License
 
-Apache Licence 2.0
-
+MIT Licence 2.0
