@@ -2,7 +2,7 @@
 /*
  * @Author: MaxZhang
  * @Date: 2019-08-15 10:11:40
- * @LastEditTime: 2019-08-16 09:52:54
+ * @LastEditTime: 2019-08-16 10:05:00
  */
 declare(strict_types=1);
 namespace MaxZhang\DataokeSdk;
@@ -42,7 +42,11 @@ class DefaultDataokeClient{
         if(empty($this->appSecret)){
             throw new InvalidArgumentException("appSecret can not empty ！");
         }
-        $request->check();
+        try {
+            $request->check();
+        } catch (\Exception $e) {
+            throw new InvalidArgumentException('Invalid format:' . $checkParam);
+        }        
         $paramsArray=$request->getApiParams();
         if (empty($paramsArray)) {
             $paramsArray="";
