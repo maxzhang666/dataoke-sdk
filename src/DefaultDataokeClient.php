@@ -2,7 +2,7 @@
 /*
  * @Author: MaxZhang
  * @Date: 2019-08-15 10:11:40
- * @LastEditTime: 2019-08-16 10:06:13
+ * @LastEditTime: 2019-08-16 10:14:20
  */
 declare(strict_types=1);
 namespace MaxZhang\DataokeSdk;
@@ -127,6 +127,9 @@ class DefaultDataokeClient{
         ksort($data);
         $str = '';
         foreach ($data as $k => $v) {
+            if (empty($v)) {
+                continue;
+            }
             $str .= '&' . $k . '=' . $v;
         }
         $str = trim($str, '&');
