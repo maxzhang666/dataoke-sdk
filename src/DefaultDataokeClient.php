@@ -2,7 +2,7 @@
 /*
  * @Author: MaxZhang
  * @Date: 2019-08-15 10:11:40
- * @LastEditTime: 2019-08-15 15:22:07
+ * @LastEditTime: 2019-08-16 09:52:54
  */
 declare(strict_types=1);
 namespace MaxZhang\DataokeSdk;
@@ -47,8 +47,9 @@ class DefaultDataokeClient{
         if (empty($paramsArray)) {
             $paramsArray="";
         }
-        
+        $paramsArray['appKey']=$this->appKey;
         $paramsArray=$this->signSendData($paramsArray);
+        
         try{
             $resp=self::curl($this->serverUrl.'/'.$request->getApiMethodName().'?'.http_build_query($paramsArray));
             return $resp;
@@ -77,8 +78,8 @@ class DefaultDataokeClient{
         curl_setopt($ch, CURLOPT_FAILONERROR, false);
         curl_setopt($ch, CURLOPT_HEADER, false);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-        curl_setopt($ch, CURLOPT_TIMEOUT, self::$readTimeout);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::$connectTimeout);
+        // curl_setopt($ch, CURLOPT_TIMEOUT, self::$readTimeout);
+        // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::$connectTimeout);
         // curl_setopt($ch, CURLOPT_POST, true);
         // curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
 

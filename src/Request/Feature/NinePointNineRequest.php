@@ -2,11 +2,12 @@
 /*
  * @Author: MaxZhang
  * @Date: 2019-08-15 14:24:46
- * @LastEditTime: 2019-08-15 14:52:37
+ * @LastEditTime: 2019-08-16 09:43:51
  */
 namespace MaxZhang\DataokeSdk\Request\Feature;
 
 use MaxZhang\DataokeSdk\DataokeRequest;
+use MaxZhang\SuningSdk\Exceptions\InvalidArgumentException;
 
 
  /**
@@ -40,7 +41,12 @@ use MaxZhang\DataokeSdk\DataokeRequest;
 
      function check()
      {
-         // TODO: Implement check() method.
+         if (empty($this->pageId)) {
+             throw new InvalidArgumentException("pageId must be required!");
+         }
+         if (empty($this->pageSize)) {
+             throw new InvalidArgumentException("pageSize must be required!");
+         }
      }
  }
 
