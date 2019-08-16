@@ -2,7 +2,7 @@
 /*
  * @Author: MaxZhang
  * @Date: 2019-08-15 10:11:40
- * @LastEditTime: 2019-08-16 10:05:00
+ * @LastEditTime: 2019-08-16 10:06:13
  */
 declare(strict_types=1);
 namespace MaxZhang\DataokeSdk;
@@ -45,7 +45,7 @@ class DefaultDataokeClient{
         try {
             $request->check();
         } catch (\Exception $e) {
-            throw new InvalidArgumentException('Invalid format:' . $checkParam);
+            throw new InvalidArgumentException('Invalid format:' . $e->getMessage());
         }        
         $paramsArray=$request->getApiParams();
         if (empty($paramsArray)) {
