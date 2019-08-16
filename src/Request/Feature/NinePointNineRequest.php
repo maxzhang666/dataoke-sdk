@@ -2,13 +2,12 @@
 /*
  * @Author: MaxZhang
  * @Date: 2019-08-15 14:24:46
- * @LastEditTime: 2019-08-16 09:43:51
+ * @LastEditTime: 2019-08-16 10:00:31
  */
 namespace MaxZhang\DataokeSdk\Request\Feature;
 
 use MaxZhang\DataokeSdk\DataokeRequest;
-use MaxZhang\SuningSdk\Exceptions\InvalidArgumentException;
-
+use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
 
  /**
   * 9.9精选  
