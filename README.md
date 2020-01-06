@@ -100,7 +100,7 @@ class CategoryGet extends Controller
 ```
 >如上，可以用两种方式来获取 MaxZhang\DataokeSdk\DefaultDataokeClient 实例：
 
-###方法注入
+### 方法注入
 ```php
     public function show(DefaultDataokeClient $defaultDataokeClient) 
     {
@@ -108,7 +108,7 @@ class CategoryGet extends Controller
         $response = $defaultDataokeClient->execute('$req');
     }
 ```
-###服务名访问
+### 服务名访问
 ```php
     public function show() 
     {
