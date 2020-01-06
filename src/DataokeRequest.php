@@ -9,7 +9,8 @@ namespace MaxZhang\DataokeSdk;
 abstract class DataokeRequest
 {
     protected $apiParams = array();
-    protected $apiMethodName;    
+    protected $apiMethodName;
+    protected $version;
 
     abstract function generParams();
 

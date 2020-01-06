@@ -21,9 +21,9 @@ use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
 class RankingListRequest extends DataokeRequest
 {
     protected $apiMethodName = "api/goods/get-ranking-list";
-    public $version = "v1.0.2";
+    public $version = "v1.1.2";
     /**
-     * @var int 榜单类型   1.实时榜 2.全天榜 3.热推榜（热推榜分类无效）4.复购榜
+     * @var int 榜单类型   1.实时榜 2.全天榜 3.热推榜 4.复购榜 5.热词飙升榜 6.热词排行榜 7.综合热搜榜
      */
     public $rankType;
     /**
