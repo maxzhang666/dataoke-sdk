@@ -3,12 +3,10 @@
 namespace Tests\Feature;
 
 
-use MaxZhang\DataokeSdk\Request\Feature\RankingListRequest;
-
-
+use MaxZhang\DataokeSdk\Request\Feature\NinePointNineRequest;
 use Tests\TestCaseBase;
 
-class RankingList extends TestCaseBase
+class NinePointNineTest extends TestCaseBase
 {
 
     /**
@@ -18,14 +16,13 @@ class RankingList extends TestCaseBase
      */
     public function getList()
     {
-        $req           = new RankingListRequest();
-        $req->rankType = 3;
-
+        $req = new NinePointNineRequest();
 
         $res = $this->client->execute($req);
 
         print_r($res);
 
         self::assertIsBool(true);
+
     }
 }

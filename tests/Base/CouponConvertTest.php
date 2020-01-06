@@ -1,26 +1,23 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Base;
 
 
-use MaxZhang\DataokeSdk\Request\Feature\RankingListRequest;
-
-
+use MaxZhang\DataokeSdk\Request\Base\CouponConvertRequest;
 use Tests\TestCaseBase;
 
-class RankingList extends TestCaseBase
+class CouponConvertTest extends TestCaseBase
 {
-
     /**
      * @test
      * @throws \MaxZhang\DataokeSdk\Exceptions\HttpException
      * @throws \MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException
      */
-    public function getList()
+    public function convert()
     {
-        $req           = new RankingListRequest();
-        $req->rankType = 3;
-
+        $req           = new CouponConvertRequest();
+        $req->goodsId  = '598088771970';
+        $req->couponId = '28fa84e6c5944a489114ad703855ee19';
 
         $res = $this->client->execute($req);
 
@@ -28,4 +25,5 @@ class RankingList extends TestCaseBase
 
         self::assertIsBool(true);
     }
+
 }

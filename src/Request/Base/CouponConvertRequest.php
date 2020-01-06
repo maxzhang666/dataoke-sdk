@@ -15,9 +15,14 @@ use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
 class CouponConvertRequest extends DataokeRequest
 {
 
-    protected $apiMethodName = "api/goods/get-ranking-list";
+    protected $apiMethodName = "api/tb-service/get-privilege-link";
     protected $version = "v1.1.1";
 
+    /**
+     * 淘宝商品id
+     * @var            String
+     */
+    public $goodsId;
     /**
      * 券ID
      * @var string 商品的优惠券ID，一个商品在联盟可能有多个优惠券，可通过填写该参数的方式选择使用的优惠券，请确认优惠券ID正确，否则无法正常跳转
@@ -42,6 +47,7 @@ class CouponConvertRequest extends DataokeRequest
     function generParams()
     {
         return [
+            'goodsId'    => $this->goodsId,
             'couponId'   => $this->couponId,
             'pid'        => $this->pid,
             'channelId'  => $this->channelId,
@@ -54,8 +60,93 @@ class CouponConvertRequest extends DataokeRequest
      */
     function check()
     {
+        if (empty($this->goodsId)) {
+            throw  new InvalidArgumentException("goodsId must be required!");
+        }
         if (empty($this->couponId)) {
             throw new InvalidArgumentException("couponId must be required!");
         }
     }
+
+    /**
+     * @return String
+     */
+    public function getGoodsId(): String
+    {
+        return $this->goodsId;
+    }
+
+    /**
+     * @param String $goodsId
+     */
+    public function setGoodsId(String $goodsId): void
+    {
+        $this->goodsId = $goodsId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCouponId(): string
+    {
+        return $this->couponId;
+    }
+
+    /**
+     * @param string $couponId
+     */
+    public function setCouponId(string $couponId): void
+    {
+        $this->couponId = $couponId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPid(): string
+    {
+        return $this->pid;
+    }
+
+    /**
+     * @param string $pid
+     */
+    public function setPid(string $pid): void
+    {
+        $this->pid = $pid;
+    }
+
+    /**
+     * @return string
+     */
+    public function getChannelId(): string
+    {
+        return $this->channelId;
+    }
+
+    /**
+     * @param string $channelId
+     */
+    public function setChannelId(string $channelId): void
+    {
+        $this->channelId = $channelId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRebateType(): int
+    {
+        return $this->rebateType;
+    }
+
+    /**
+     * @param int $rebateType
+     */
+    public function setRebateType(int $rebateType): void
+    {
+        $this->rebateType = $rebateType;
+    }
+
+
 }
