@@ -12,11 +12,16 @@ namespace MaxZhang\DataokeSdk\Request\Search;
 use MaxZhang\DataokeSdk\DataokeRequest;
 use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
 
+/**
+ * 大淘客搜索
+ * Class DTKSearchRequest
+ * @package MaxZhang\DataokeSdk\Request\Search
+ */
 class DTKSearchRequest extends DataokeRequest
 {
     protected $apiMethodName = "api/goods/get-dtk-search-goods";
 
-    public $version = "v2.0.0";
+    public $version = "v2.1.1";
     /**
      * @var int    每页条数 默认100 ，可选范围：10,50,100,200，如果小于10按10处理，大于200按照200处理，其它非范围内数字按100处理
      */
@@ -36,7 +41,7 @@ class DTKSearchRequest extends DataokeRequest
     /**
      * @var int 二级类目Id 大淘客的二级类目id，通过超级分类API获取。仅允许传一个二级id，当一级类目id和二级类目id同时传入时，会自动忽略二级类目id
      */
-    public $scids;
+    public $subcid;
     /**
      * @var int 是否聚划算 1-聚划算商品，0-所有商品，不填默认为0
      */
@@ -106,7 +111,7 @@ class DTKSearchRequest extends DataokeRequest
             'pageId' => $this->pageId,
             'keyWords' => $this->keyWords,
             'cids' => $this->cids,
-            'scids' => $this->scids,
+            'subcid' => $this->subcid,
             'juHuaSuan' => $this->juHuaSuan,
             'taoQiangGou' => $this->taoQiangGou,
             'tmall' => $this->tmall,
