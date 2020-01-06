@@ -13,6 +13,11 @@ namespace MaxZhang\DataokeSdk\Request\Feature;
 use MaxZhang\DataokeSdk\DataokeRequest;
 use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
 
+/**
+ * 各大榜单
+ * Class RankingListRequest
+ * @package MaxZhang\DataokeSdk\Request\Feature
+ */
 class RankingListRequest extends DataokeRequest
 {
     protected $apiMethodName = "api/goods/get-ranking-list";
@@ -26,11 +31,31 @@ class RankingListRequest extends DataokeRequest
      */
     public $cid;
 
+    /**
+     * @return int
+     */
+    public function getRankType(): int
+    {
+        return $this->rankType;
+    }
+
+    /**
+     * @param int $rankType
+     */
+    public function setRankType(int $rankType): void
+    {
+        $this->rankType = $rankType;
+    }
+
+
     function generParams()
     {
         return array('version' => $this->version, 'rankType' => $this->rankType, 'cid' => $this->cid);
     }
 
+    /**
+     * @throws InvalidArgumentException
+     */
     function check()
     {
         if (empty($this->rankType)) {
