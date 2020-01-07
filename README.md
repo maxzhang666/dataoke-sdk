@@ -12,7 +12,17 @@ $ composer require maxzhang/dataoke-sdk
 ```
 ## 说明:
 ### 目前完成：
-还没有
+
+| 基础功能API |  | |
+|  | 高效转链 | v1.1.1 |
+| 搜索相关API |  |  |
+|  | 大淘客搜索 | v2.1.1 |
+|  | 超级搜索 | v1.0.1 |
+| 特色栏目API |  |  |
+|  | 9.9包邮精选 | v1.0.2 |
+|  | 各大榜单 | v1.1.2 |
+|  | 猜你喜欢 | v1.0.1 |
+
 
 
 [官方文档](http://www.dataoke.com/pmc/api-market.html)
@@ -100,7 +110,7 @@ class CategoryGet extends Controller
 ```
 >如上，可以用两种方式来获取 MaxZhang\DataokeSdk\DefaultDataokeClient 实例：
 
-###方法注入
+### 方法注入
 ```php
     public function show(DefaultDataokeClient $defaultDataokeClient) 
     {
@@ -108,7 +118,7 @@ class CategoryGet extends Controller
         $response = $defaultDataokeClient->execute('$req');
     }
 ```
-###服务名访问
+### 服务名访问
 ```php
     public function show() 
     {
