@@ -21,7 +21,7 @@ $ composer require maxzhang/dataoke-sdk
 | 特色栏目API |  |  |
 |  | 9.9包邮精选 | v1.0.2 |
 |  | 各大榜单 | v1.1.2 |
-|  | 猜你喜欢 | v1.0.1 |
+|  | 猜你喜欢 | v1.2.2 |
 
 
 
