@@ -14,6 +14,7 @@ $ composer require maxzhang/dataoke-sdk
 ### 目前完成：
 
 | 基础功能API |  | |
+| :---- |:----  |----: |
 |  | 高效转链 | v1.1.1 |
 | 搜索相关API |  |  |
 |  | 大淘客搜索 | v2.1.1 |
