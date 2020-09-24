@@ -8,15 +8,15 @@ use MaxZhang\DataokeSdk\DataokeRequest;
 use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
 
 /**
- * 淘宝客链接转换
- * Class CouponConvertRequest
+ * 高效转链
+ * Class GetPrivilegeLinkRequest
  * @package MaxZhang\DataokeSdk\Request\Base
  */
-class CouponConvertRequest extends DataokeRequest
+class GetPrivilegeLinkRequest extends DataokeRequest
 {
 
     protected $apiMethodName = "api/tb-service/get-privilege-link";
-    protected $version = "v1.1.1";
+    protected $version = "v1.3.0";
 
     /**
      * 淘宝商品id
@@ -43,6 +43,21 @@ class CouponConvertRequest extends DataokeRequest
      * @var int 0.不使用付定返红包，1.参与付定返红包，付定返红包相关规则：http://www.dataoke.com/info/?id=269
      */
     public $rebateType;
+    /**
+     * 会员运营id
+     * @var string
+     */
+    public $specialId;
+    /**
+     * 淘宝客外部用户标记，如自身系统账户ID；微信ID等
+     * @var string
+     */
+    public $externalId;
+    /**
+     * 团长与下游渠道合作的特殊标识，用于统计渠道推广效果 （新增入参）
+     * @var
+     */
+    public $xid;
 
     function generParams()
     {
@@ -51,7 +66,10 @@ class CouponConvertRequest extends DataokeRequest
             'couponId'   => $this->couponId,
             'pid'        => $this->pid,
             'channelId'  => $this->channelId,
-            'rebateType' => $this->rebateType
+            'rebateType' => $this->rebateType,
+            'specialId'  => $this->specialId,
+            'externalId' => $this->externalId,
+            'xid'        => $this->xid
         ];
     }
 
@@ -71,7 +89,7 @@ class CouponConvertRequest extends DataokeRequest
     /**
      * @return String
      */
-    public function getGoodsId(): String
+    public function getGoodsId(): string
     {
         return $this->goodsId;
     }
@@ -79,7 +97,7 @@ class CouponConvertRequest extends DataokeRequest
     /**
      * @param String $goodsId
      */
-    public function setGoodsId(String $goodsId): void
+    public function setGoodsId(string $goodsId): void
     {
         $this->goodsId = $goodsId;
     }
