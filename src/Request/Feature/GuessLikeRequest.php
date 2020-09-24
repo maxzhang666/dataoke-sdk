@@ -32,7 +32,7 @@ class GuessLikeRequest extends DataokeRequest
     function check()
     {
         if (empty($this->id)) {
-            throw InvalidArgumentException::class('goods id must required');
+            throw new InvalidArgumentException('goods id must required');
         }
     }
 }
