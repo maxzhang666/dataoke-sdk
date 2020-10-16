@@ -4,18 +4,20 @@ namespace Tests\Base;
 
 
 use MaxZhang\DataokeSdk\Request\Base\CouponConvertRequest;
+use MaxZhang\DataokeSdk\Request\Base\TwdToTwdRequest;
 use Tests\TestCaseBase;
 
-class CouponConvertTest extends TestCaseBase
+class TwdToTwdTest extends TestCaseBase
 {
     /**
-     * @test
      * @throws \MaxZhang\DataokeSdk\Exceptions\HttpException
      * @throws \MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException
      */
-    public function convert()
+    public function TwdToTwd()
     {
-        $req           = new CouponConvertRequest();
+        $req = new TwdToTwdRequest();
+        $req->setContent('淘口令');
+
 
         $res = $this->client->execute($req);
 

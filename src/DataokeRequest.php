@@ -22,7 +22,7 @@ abstract class DataokeRequest
      */
     public function getApiParams()
     {
-        $this->apiParams                = $this->generParams();
+        $this->apiParams            = $this->generParams();
         $this->apiParams['version'] = $this->version;
         return $this->apiParams;
     }
