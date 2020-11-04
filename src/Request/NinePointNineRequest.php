@@ -37,6 +37,11 @@ use MaxZhang\DataokeSdk\DataokeRequest;
      {
          return array('version' =>$this->version ,'pageId'=>$this->pageId ,'nineCid'=>$this->nineCid);
      }
+
+     function check()
+     {
+         // TODO: Implement check() method.
+     }
  }
 
 
