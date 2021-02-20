@@ -3,18 +3,20 @@
 namespace Tests\Feature;
 
 
+use MaxZhang\DataokeSdk\Exceptions\HttpException;
+use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
 use MaxZhang\DataokeSdk\Request\Feature\RankingListRequest;
 
 
 use Tests\TestCaseBase;
 
-class RankingList extends TestCaseBase
+class RankingListTest extends TestCaseBase
 {
 
     /**
      * @test
-     * @throws \MaxZhang\DataokeSdk\Exceptions\HttpException
-     * @throws \MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException
+     * @throws HttpException
+     * @throws InvalidArgumentException
      */
     public function getList()
     {
