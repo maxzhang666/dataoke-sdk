@@ -25,9 +25,9 @@ class DefaultDataokeClient
     /**
      * 构造方法.
      *
-     * @param string $appKey 应用访问key
-     * @param string $appSecret appKey对应密钥
-     * @param string $serverUrl 服务调用地址
+     * @param string|null $appKey 应用访问key
+     * @param string|null $appSecret appKey对应密钥
+     * @param string      $serverUrl 服务调用地址
      */
     public function __construct(string $appKey = null, string $appSecret = null, string $serverUrl = "https://openapi.dataoke.com")
     {
@@ -61,7 +61,7 @@ class DefaultDataokeClient
         }
         $paramsArray = $request->getApiParams();
         if (empty($paramsArray)) {
-            $paramsArray = "";
+            $paramsArray = [];
         }
         $paramsArray['appKey'] = $this->appKey;
         $paramsArray           = $this->signSendData($paramsArray);
@@ -77,9 +77,9 @@ class DefaultDataokeClient
     }
 
     /**
-     * @param $url
+     * @param          $url
      * @param json|xml $postFields
-     * @param array $header
+     * @param array    $header
      * @return bool|string
      * @throws HttpException
      */
