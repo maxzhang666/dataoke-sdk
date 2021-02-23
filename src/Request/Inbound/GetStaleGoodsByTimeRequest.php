@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MaxZhang\DataokeSdk\Request\Base;
+namespace MaxZhang\DataokeSdk\Request\Inbound;
 
 
 use MaxZhang\DataokeSdk\DataokeRequest;
