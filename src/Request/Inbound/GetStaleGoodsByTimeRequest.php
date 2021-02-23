@@ -51,7 +51,7 @@ class GetStaleGoodsByTimeRequest extends DataokeRequest
      */
     function check()
     {
-        if (empty($this->goodsId)) {
+        if (empty($this->pageId)) {
             throw  new InvalidArgumentException("pageId must be required!");
         }
     }
