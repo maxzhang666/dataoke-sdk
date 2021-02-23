@@ -120,12 +120,21 @@ class DefaultDataokeClient
 
     /**
      * 对发送数据进行签名
+     * @param $para
+     * @return array
      */
-    private function signSendData($para)
+    private function signSendData($para): array
     {
-        $sign         = $this->makeSign($para, $this->appSecret);
-        $para['sign'] = $sign;
-        return $para;
+        $_para = [];
+        //过滤无效数据
+        foreach ($para as $k => $value) {
+            if (!empty($value)) {
+                $_para[$k] = $value;
+            }
+        }
+        $sign          = $this->makeSign($_para, $this->appSecret);
+        $_para['sign'] = $sign;
+        return $_para;
     }
 
     /**参数加密
