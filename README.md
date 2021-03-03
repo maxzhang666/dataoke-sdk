@@ -28,6 +28,7 @@ $ composer require maxzhang/dataoke-sdk
 |  | 9.9包邮精选 | v1.0.2 |可用于搭建淘客导购软件：网站，cms，公众号，小程序等应用的特色栏目|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=15)|
 |  | 各大榜单 | v1.1.2 |可用于搭建自己的特色榜单，帮助用户快速决策购买优质的商品，提升选品体验|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=6)|
 |  | 猜你喜欢 | v1.2.2 |可用于用户查看某个商品详情后相关商品的推荐或首页内容推荐|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=16)|
+|  | 每日爆品推荐 | v1.0.0 |可用于特色栏目专区搭建，或者社群分发推广|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=34)|
 
 
 
