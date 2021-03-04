@@ -3,6 +3,7 @@
 <p align="center"> 基于大淘客开放平台Api封装的 Composer Package 组件包.</p>
 
 ## 目录结构：
+
 - src //项目目录
 
 ## 安装：
@@ -10,7 +11,9 @@
 ```
 $ composer require maxzhang/dataoke-sdk
 ```
+
 ## 说明:
+
 ### 目前完成：
 
 | 分类 |名称  |版本 |应用场景|接口说明|
@@ -30,17 +33,17 @@ $ composer require maxzhang/dataoke-sdk
 |  | 猜你喜欢 | v1.2.2 |可用于用户查看某个商品详情后相关商品的推荐或首页内容推荐|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=16)|
 |  | 每日爆品推荐 | v1.0.0 |可用于特色栏目专区搭建，或者社群分发推广|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=34)|
 |  | 京东大牌折扣 | v1.0.0 |可用于搭建京东品牌商品特色栏目，商品质量保证，性价比高，转化高|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=67)|
-
-
+|  | 历史新低商品合集 | v1.0.0 |可用户搭建历史新低商品合集专题|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=48)|
 
 [官方文档](http://www.dataoke.com/pmc/api-market.html)
 
-
 ## 使用方法(参考suning-sdk):
+
 ```php
 use MaxZhang\DataokeSdk\Request\Govbus\CategoryGetRequest;
 use MaxZhang\DataokeSdk\DefaultDataokeClient;
 ```
+
 ```php
 $req = new CategoryGetRequest();
 $assertArray = [
@@ -57,20 +60,22 @@ print_r("请求报文:\n" . $reqJson);
 print_r("\n返回响应报文:\n" . $resp);
 
 ```
-###laravel 框架中使用
 
+### laravel 框架中使用
 
->laravel 5.5以下安排完毕后需要自行配置ServiceProvider：
+> laravel 5.5以下安排完毕后需要自行配置ServiceProvider：
 
 `config/app.php`文件`providers`中添加
 `MaxZhang\DataokeSdk\ServiceProvider::class`
+
 ```php
  'providers' => [
         ...
         MaxZhang\DataokeSdk\ServiceProvider::class
     ],
 ```
->laravel >=5.5 自动注册
+
+> laravel >=5.5 自动注册
 
 
 <p>1.安装完毕后，config/services.php添加appkey等相关配置</p>
@@ -82,6 +87,7 @@ print_r("\n返回响应报文:\n" . $resp);
     'serverUrl' => env('DATAOKE_SDK_SERVERURL')    
 ],
 ```
+
 <p>2. .env文件中新增配置项</p>
 
 ```php
@@ -89,6 +95,7 @@ DATAOKE_SDK_APPKEY= 你的appkey
 DATAOKE_SDK_APPSECRET= 你的appSecret
 DATAOKE_SDK_SERVERURL=https://openapi.dataoke.com
 ```
+
 <p>3. 配置完毕，新建控制器 开始写业务代码</p>
 
 ```php
@@ -116,9 +123,11 @@ class CategoryGet extends Controller
     }
 }
 ```
->如上，可以用两种方式来获取 MaxZhang\DataokeSdk\DefaultDataokeClient 实例：
+
+> 如上，可以用两种方式来获取 MaxZhang\DataokeSdk\DefaultDataokeClient 实例：
 
 ### 方法注入
+
 ```php
     public function show(DefaultDataokeClient $defaultDataokeClient) 
     {
@@ -126,7 +135,9 @@ class CategoryGet extends Controller
         $response = $defaultDataokeClient->execute('$req');
     }
 ```
+
 ### 服务名访问
+
 ```php
     public function show() 
     {
@@ -134,6 +145,7 @@ class CategoryGet extends Controller
         $response =app('dataokeSdk')->execute($req);
     }
 ```
+
 ## License
 
 MIT Licence 2.0
