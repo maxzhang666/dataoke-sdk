@@ -6,9 +6,19 @@ namespace MaxZhang\DataokeSdk\Request\Feature;
 
 use MaxZhang\DataokeSdk\DataokeRequest;
 
+/**
+ * 每日爆品推荐
+ *
+ * 应用场景：
+ * 可用于特色栏目专区搭建，或者社群分发推广
+ * 接口说明：
+ * 该接口返回每天满足联盟爆品规则的商品合集，单价10~20元商品当日销量超过3000单，20~40元商品当日销量超过1000单，大于等于40元的销量超过500单。 （因为统计的是商品当天的销量，所以早上可能存在数量很少的情况。10分钟会刷新一次）
+ * Class ExplosiveGoodsList
+ * @package MaxZhang\DataokeSdk\Request\Feature
+ */
 class ExplosiveGoodsList extends DataokeRequest
 {
-    protected $apiMethodName = 'explosive-goods-list';
+    protected $apiMethodName = 'api/goods/explosive-goods-list';
     protected $version = 'v1.0.0';
 
     /**

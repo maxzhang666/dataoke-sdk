@@ -8,13 +8,19 @@ use MaxZhang\DataokeSdk\DataokeRequest;
 use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
 
 /**
+ * 历史新低商品合集
+ *
+ * 应用场景：
+ * 可用户搭建历史新低商品合集专题
+ * 接口说明：
+ * 该接口返回大淘客历史最低价格商品合集
  * Class getHistoryLowPriceList
  * @package MaxZhang\DataokeSdk\Request\Feature
  */
 class getHistoryLowPriceList extends DataokeRequest
 {
 
-    protected $apiMethodName = 'get-history-low-price-list';
+    protected $apiMethodName = 'api/goods/get-history-low-price-list';
     protected $version = 'v1.0.0';
 
     /**
