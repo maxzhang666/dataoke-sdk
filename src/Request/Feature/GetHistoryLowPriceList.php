@@ -38,7 +38,7 @@ class GetHistoryLowPriceList extends DataokeRequest
     /**
      * @var string 是 排序方式，默认为0，0-综合排序，1-商品上架时间从高到低，2-销量从高到低，3-领券量从高到低，4-佣金比例从高到低，5-价格（券后价）从高到低，6-价格（券后价）从低到高
      */
-    public $sort;
+    public $sort = 0;
 
     function generParams()
     {
@@ -52,13 +52,13 @@ class GetHistoryLowPriceList extends DataokeRequest
 
     function check()
     {
-        if (empty($this->pageId)) {
+        if (!isset($this->pageId)) {
             throw new InvalidArgumentException('pageId is required!');
         }
-        if (empty($this->pageSize)) {
+        if (!isset($this->pageSize)) {
             throw new InvalidArgumentException('pageSize is required!');
         }
-        if (empty($this->sort)) {
+        if (!isset($this->sort)) {
             throw new InvalidArgumentException('sort is required!');
         }
     }
