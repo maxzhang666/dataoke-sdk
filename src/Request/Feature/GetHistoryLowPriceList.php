@@ -17,7 +17,7 @@ use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
  * Class getHistoryLowPriceList
  * @package MaxZhang\DataokeSdk\Request\Feature
  */
-class getHistoryLowPriceList extends DataokeRequest
+class GetHistoryLowPriceList extends DataokeRequest
 {
 
     protected $apiMethodName = 'api/goods/get-history-low-price-list';
