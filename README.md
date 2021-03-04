@@ -34,6 +34,7 @@ $ composer require maxzhang/dataoke-sdk
 |  | 每日爆品推荐 | v1.0.0 |可用于特色栏目专区搭建，或者社群分发推广|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=34)|
 |  | 京东大牌折扣 | v1.0.0 |可用于搭建京东品牌商品特色栏目，商品质量保证，性价比高，转化高|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=67)|
 |  | 历史新低商品合集 | v1.0.0 |可用户搭建历史新低商品合集专题|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=48)|
+|  | 大淘客独家券商品 | v1.0.0 |大淘客平台独家优惠券，可用于创建营销栏目。|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=32)|
 
 [官方文档](http://www.dataoke.com/pmc/api-market.html)
 
