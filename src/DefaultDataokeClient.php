@@ -57,7 +57,7 @@ class DefaultDataokeClient
         try {
             $request->check();
         } catch (Exception $e) {
-            throw new InvalidArgumentException('Invalid format:' . $e->getMessage());
+            throw new InvalidArgumentException('Invalid format:' . $e->getMessage() . '(' . $request->getApiMethodName() . ')');
         }
         $paramsArray = $request->getApiParams();
         if (empty($paramsArray)) {
