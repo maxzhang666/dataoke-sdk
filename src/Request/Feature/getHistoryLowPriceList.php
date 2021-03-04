@@ -52,6 +52,12 @@ class getHistoryLowPriceList extends DataokeRequest
 
     function check()
     {
+        if (empty($this->pageId)) {
+            throw new InvalidArgumentException('pageId is required!');
+        }
+        if (empty($this->pageSize)) {
+            throw new InvalidArgumentException('pageSize is required!');
+        }
         if (empty($this->sort)) {
             throw new InvalidArgumentException('sort is required!');
         }
