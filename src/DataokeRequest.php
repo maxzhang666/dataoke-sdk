@@ -7,6 +7,8 @@
 
 namespace MaxZhang\DataokeSdk;
 
+use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
+
 abstract class DataokeRequest
 {
     protected $apiParams = array();
@@ -15,6 +17,10 @@ abstract class DataokeRequest
 
     abstract function generParams();
 
+    /**
+     * @return mixed
+     * @throws InvalidArgumentException
+     */
     abstract function check();
 
     /**
