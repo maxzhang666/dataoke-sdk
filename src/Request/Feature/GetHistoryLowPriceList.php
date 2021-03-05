@@ -21,6 +21,7 @@ class GetHistoryLowPriceList extends DataokeRequest
 {
 
     protected $apiMethodName = 'api/goods/get-history-low-price-list';
+
     protected $version = 'v1.0.0';
 
     /**
