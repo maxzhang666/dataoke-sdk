@@ -38,6 +38,7 @@ $ composer require maxzhang/dataoke-sdk
 |  | 每日半价 | v1.0.0 |可用于特色营销栏目搭建或社群分发推广|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=38)|
 |  | 折上折 | v1.0.0 |可用于搭建导购网站、APP、小程序等应用的特色栏目或社群分发推广|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=39)|
 |  | 官方活动（淘宝1元购） | v1.2.0 |可用于导购平台的活动推广专区|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=24)|
+|  | 热门主播力荐商品 | v1.0.0 |可用于搭建淘宝直播商品特色栏目|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=55)|
 
 [官方文档](http://www.dataoke.com/pmc/api-market.html)
 
