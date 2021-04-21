@@ -16,6 +16,8 @@ use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
 class ListTipOffRequest extends DataokeRequest
 {
 
+    protected $version = 'v2.0.0';
+    protected $apiMethodName = 'api/dels/spider/list-tip-off';
 
     /**
      * @var int 线报类型：1-超值买返2-天猫超市3-整点抢购4-最新线报-所有数据(默认)5-最新线报-天猫6-最新线报-京东7-最新线报-拼多多
