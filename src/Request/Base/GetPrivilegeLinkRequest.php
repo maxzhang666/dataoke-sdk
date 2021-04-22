@@ -16,7 +16,7 @@ class GetPrivilegeLinkRequest extends DataokeRequest
 {
 
     protected $apiMethodName = "api/tb-service/get-privilege-link";
-    protected $version = "v1.3.0";
+    protected $version = "v1.3.1";
 
     /**
      * 淘宝商品id
@@ -59,17 +59,29 @@ class GetPrivilegeLinkRequest extends DataokeRequest
      */
     public $xid;
 
+    /**
+     * @var string 淘口令左边自定义符号,默认￥ （2021/3/9新增入参）
+     */
+    public $leftSymbol;
+
+    /**
+     * @var  string 淘口令右边自定义符号,默认￥ （2021/3/9新增入参）
+     */
+    public $rightSymbol;
+
     function generParams()
     {
         return [
-            'goodsId'    => $this->goodsId,
-            'couponId'   => $this->couponId,
-            'pid'        => $this->pid,
-            'channelId'  => $this->channelId,
-            'rebateType' => $this->rebateType,
-            'specialId'  => $this->specialId,
-            'externalId' => $this->externalId,
-            'xid'        => $this->xid
+            'goodsId'     => $this->goodsId,
+            'couponId'    => $this->couponId,
+            'pid'         => $this->pid,
+            'channelId'   => $this->channelId,
+            'rebateType'  => $this->rebateType,
+            'specialId'   => $this->specialId,
+            'externalId'  => $this->externalId,
+            'xid'         => $this->xid,
+            'leftSymbol'  => $this->leftSymbol,
+            'rightSymbol' => $this->rightSymbol,
         ];
     }
 
@@ -80,9 +92,6 @@ class GetPrivilegeLinkRequest extends DataokeRequest
     {
         if (empty($this->goodsId)) {
             throw  new InvalidArgumentException("goodsId must be required!");
-        }
-        if (empty($this->couponId)) {
-            throw new InvalidArgumentException("couponId must be required!");
         }
     }
 

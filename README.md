@@ -22,7 +22,7 @@ $ composer require maxzhang/dataoke-sdk
 |  | 商品详情 | v1.2.3 |用于查看某个具体商品的详细信息，帮助用户购买决策。可构建单品详情页|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=8)|
 |  | 定时拉取 | v1.2.3 |用于商品增量更新，无重复拉取商品。建议开始时间为上次调用的时间，结束时间为当前时间。|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=12)|
 | 基础功能API |  | |||
-|  | 高佣转链 | v1.1.1 |可用于导购平台的高拥转链工具|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=7)|
+|  | 高佣转链 | v1.3.1 |可用于导购平台的高拥转链工具|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=7)|
 |  | 淘口令转淘口令 | v1.0.0 |当用户从其他渠道采集到商品口令，想要自己推广，可以将此转为自己的淘口令|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=30)|
 |  | 淘口令生成 | v1.0.0 |该接口可以将二合一链接、长链接、短链接等各种淘宝高佣链接，生成淘口令|[接口说明](http://www.dataoke.com/pmc/api-d.html?id=28)|
 | 搜索相关API |  |  |||
