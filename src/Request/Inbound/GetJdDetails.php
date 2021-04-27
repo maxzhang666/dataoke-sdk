@@ -20,7 +20,7 @@ use MaxZhang\DataokeSdk\Exceptions\InvalidArgumentException;
 class GetJdDetails extends DataokeRequest
 {
 
-    protected $apiMethodName = '/api/dels/jd/goods/get-details';
+    protected $apiMethodName = 'api/dels/jd/goods/get-details';
     protected $version = 'v1.0.0';
 
     /**
